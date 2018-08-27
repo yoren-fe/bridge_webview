@@ -70,7 +70,7 @@
             }
             var handler = messageHandlers[message.handlerName];
             if (!handler) {
-                console.log("nativeApp: WARNING: no handler for message from java", message);
+                console.log("bridge: WARNING: no handler for message from java", message);
             } else {
                 handler(message.data, responseCallback);
             }
@@ -85,7 +85,7 @@
         }
     }
     window.nativeApp = bridge;
-    console.log("nativeApp: WARNING: no handler for message from java", window.nativeApp);
+    console.log("bridge: WARNING: no handler for message from java", bridge);
 
     window.close=function(){
       bridge.callHandler("_closePage")
