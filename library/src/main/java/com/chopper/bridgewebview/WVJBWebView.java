@@ -13,13 +13,12 @@ import androidx.annotation.Keep;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.webkit.JavascriptInterface;
-
-import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
-import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
-import com.tencent.smtt.sdk.ValueCallback;
-import com.tencent.smtt.sdk.WebChromeClient;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
+import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -461,15 +460,6 @@ public class WVJBWebView extends WebView {
                 webChromeClient.onReceivedTitle(view, title);
             } else {
                 super.onReceivedTitle(view, title);
-            }
-        }
-
-        @Override
-        public void openFileChooser(ValueCallback<Uri> valueCallback, String s, String s1) {
-            if (webChromeClient != null) {
-                webChromeClient.openFileChooser(valueCallback, s, s1);
-            } else {
-                super.openFileChooser(valueCallback, s, s1);
             }
         }
 
